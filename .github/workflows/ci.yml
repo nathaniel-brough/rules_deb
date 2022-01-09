@@ -1,0 +1,29 @@
+name: CI
+
+on:
+  push: {}
+
+jobs:
+  build:
+    runs-on: ubuntu-latest
+    
+    steps:
+    - uses: actions/checkout@v1
+
+    - name: Mount bazel cache
+      uses: actions/cache@v1
+      with:
+        path: "/home/runner/.cache/bazel"
+        key: bazel
+      
+    - name: Build
+      run: |
+        # Retry 5 times if snapshot fetch fails
+        for i in {1..5}; do bazelisk build //... && break || sleep 5; done  
+
+        # Build a specific target 
+        bazelisk build //tests/libusb_app:listdevs
+
+    - name: Test bin example
+      run: |
+        bazel run @bash//:bin/bash -- --help
