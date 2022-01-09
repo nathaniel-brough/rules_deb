@@ -1,4 +1,6 @@
 # rules_deb
+[![CI](https://github.com/silvergasp/rules_deb/actions/workflows/ci.yml/badge.svg)](https://github.com/silvergasp/rules_deb/actions/workflows/ci.yml)
+
 A set of bazel rules for hermetic builds using debian packages.
 
 ** WARNING **: Some functionality is not complete, this is an ongoing project.
