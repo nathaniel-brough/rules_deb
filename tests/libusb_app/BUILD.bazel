@@ -1,0 +1,8 @@
+# Test linking against system deps.
+cc_binary(
+    name = "listdevs",
+    srcs = ["listdevs.c"],
+    copts = ["-pthread"],
+    linkopts = ["-lpthread"],
+    deps = ["@libusb-1.0-0-dev//:cc_libusb-1.0-0-dev"],
+)
