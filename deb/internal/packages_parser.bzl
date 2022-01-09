@@ -55,7 +55,7 @@ def parse_dependency(dependency_str):
         dep_split.append(None)
     name, version_range = dep_split
 
-    # TODO(#2): Handle multiple optional dependencies. e.g. Depends may be in
+    # TODO(#4): Handle multiple optional dependencies. e.g. Depends may be in
     # the form 'libc6-dev | libc-dev'. To simplify this we will just use the
     # first optional dependency ignoring the rest.
 

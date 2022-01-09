@@ -114,7 +114,7 @@ SHARED_LIBS = {{f: t
     for f, t in FILE_MAPPING__.items() 
     if f.endswith(".so")}}
 
-# TODO(#1): Uncomment this when we have a way to deal with
+# TODO(#3): Uncomment this when we have a way to deal with
 # linking PIC and non-PIC static libs. e.g. we need to solve
 # 'relocation R_X86_64_PC32 cannot be used against symbol'.
 # linker errors.
